@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useRef, useState} from 'react'
 import './App.css'
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Profile from "./pages/Profile.jsx";
@@ -22,12 +22,15 @@ function App() {
     const {
         token: {colorBgContainer, borderRadiusLG},
     } = theme.useToken();
+    const mainRef = useRef(null);
 
     return (
         <>
             <Header/>
             <SideBar />
+            <main className={"bg-black text-white overflow-y-auto overscroll-none"} ref={mainRef}>
             <Profile/>
+            </main>
             <Skill  />
             <Experience />
             <Project />

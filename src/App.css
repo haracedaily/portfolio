@@ -11,3 +11,8 @@
     margin:0;
     box-sizing: border-box;
 }
+
+#root>main>*{
+    height:80vh;
+    overflow: hidden;
+}
