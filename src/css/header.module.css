@@ -23,15 +23,15 @@
             &::before{
                 width: 100%;
                 height:100%;
-                border-top: 2px solid coral;
-                border-right: 2px solid coral;
+                border-top: 2px solid #ffb900;
+                border-right: 2px solid #ffb900;
                 transition: width 0.2s ease-in-out,height 0.2s ease-in-out 0.2s;
             }
             &::after{
                 width: 100%;
                 height:100%;
-                border-bottom: 2px solid coral;
-                border-left: 2px solid coral;
+                border-bottom: 2px solid #ffb900;
+                border-left: 2px solid #ffb900;
                 transition: border-color ease-out 0.2s, height 0.2s ease-in-out,width 0.2s ease-in-out 0.2s;
             }
         }
