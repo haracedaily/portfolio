@@ -16,3 +16,36 @@
     height:80vh;
     overflow: hidden;
 }
+
+.none{
+    display: none;
+}
+
+.interval_title{
+    width:0;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: interval_title 1.5s ease-in-out infinite;
+}
+@keyframes interval_title{
+    0%{
+        width:0;
+        opacity: 0;
+    }
+    15%{
+        opacity: 1;
+    }
+    35%{
+        width:100%;
+    }
+    65%{
+        width:100%;
+    }
+    85%{
+        opacity: 1;
+    }
+    100%{
+        width:0;
+        opacity: 0;
+    }
+}
