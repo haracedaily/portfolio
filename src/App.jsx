@@ -1,4 +1,4 @@
-import {useRef, useState} from 'react'
+import {useEffect, useRef, useState} from 'react'
 import './App.css'
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Profile from "./pages/Profile.jsx";
@@ -26,33 +26,33 @@ function App() {
     const [scrollLoad,setScrollLoad] = useState(false);
     const mainRef = useRef(null);
     const checkScroll = (e)=>{
-        if(e.target.scrollTop===currentScroll||e.target.scrollTop===e.target.scrollHeight-e.target.clientHeight){
-            setCurrentScroll(e.target.scrollTop);
+        let targetTop = Math.floor(e.target.scrollTop);
+        if(targetTop===Math.floor(currentScroll)||targetTop===Math.floor(e.target.scrollHeight)-Math.floor(e.target.clientHeight)){
             setScrollLoad(false);
         }
         if(scrollLoad) {
-            e.target.scrollTop = currentScroll;
             return;
         }
-    if(e.target.scrollTop>currentScroll){
-        mainRef.current.scrollTop = currentScroll+mainRef.current.clientHeight;
+    if(targetTop>currentScroll+(Math.floor(e.target.clientHeight)*0.1)){
         setScrollLoad(true);
-
-        if(!(e.target.scrollTop === (e.target.scrollHeight-e.target.clientHeight)))
-        setCurrentScroll(currentScroll+mainRef.current.clientHeight)
-    }else{
-        mainRef.current.scrollTop = currentScroll-mainRef.current.clientHeight;
+        if(! ((targetTop === Math.floor(e.target.scrollHeight)-Math.floor(e.target.clientHeight))))
+        setCurrentScroll(currentScroll+Math.floor(mainRef.current.clientHeight));
+    }else if(targetTop<currentScroll-(Math.floor(e.target.clientHeight)*0.1)){
         setScrollLoad(true);
-        if(e.target.scrollTop)
-            if(currentScroll-mainRef.current.clientHeight>0)
-        setCurrentScroll(currentScroll-mainRef.current.clientHeight);
+        if(targetTop)
+            if(currentScroll-Math.floor(mainRef.current.clientHeight)>0){
+        setCurrentScroll(currentScroll-Math.floor(mainRef.current.clientHeight));
+            }
         else setCurrentScroll(0);
     };
-
     }
+
+    useEffect(()=>{
+        mainRef.current.scrollTop=currentScroll;
+    },[currentScroll])
     return (
         <>
-            <Header mainRef={mainRef} />
+            <Header mainRef={mainRef} setCurrentScroll={setCurrentScroll} setScrollLoad={setScrollLoad}/>
             <SideBar />
             <main className={`${scrollLoad&&"change_screen"} h-[90vh] bg-obliq-orange text-white overflow-y-auto`} onScroll={checkScroll} ref={mainRef}>
             <Profile/>
