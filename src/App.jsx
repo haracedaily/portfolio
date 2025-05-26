@@ -28,12 +28,12 @@ function App() {
         <>
             <Header/>
             <SideBar />
-            <main className={"bg-black text-white overflow-y-auto overscroll-none"} ref={mainRef}>
+            <main className={"bg-obliq-orange text-white overflow-y-auto overscroll-none"} ref={mainRef}>
             <Profile/>
-            </main>
             <Skill  />
             <Experience />
             <Project />
+            </main>
 
         </>
     )
