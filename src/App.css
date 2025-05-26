@@ -13,7 +13,7 @@
 }
 
 #root>main>*{
-    height:80vh;
+    height:90vh;
     overflow: hidden;
 }
 
@@ -48,4 +48,8 @@
         width:0;
         opacity: 0;
     }
+}
+
+.bg\-obliq\-orange{
+    background : linear-gradient(60deg,#ffb900 30%,#000000 30% 100%);
 }

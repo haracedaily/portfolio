@@ -2,8 +2,10 @@
     font-size: min(3vw,1.5rem);
 }
 .header_ul{
+        width:40%;
         gap:2rem;
     &>li{
+        width: 25%;
         padding: 1vw;
         border-radius: 5px;
         box-shadow: 0 0 2px 0 rgba(0,0,0,0.2);
@@ -49,6 +51,7 @@
 
 @media screen and (max-width: 600px){
     .header_ul{
+        width: 70%;
         gap:1em;
         &>li{
             padding: 3px;
