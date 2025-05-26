@@ -1,18 +1,21 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Image} from "antd";
 
 function Profile(props) {
     let title_index=0;
-    setInterval(()=>{
-        [...document.querySelectorAll(".interval_title")].map(el=>el.classList.add("none"));
-        title_index++;
-        if(title_index>2) title_index=0;
-        document.querySelectorAll(".interval_title")[title_index].classList.remove("none");
-    },1500);
+    useEffect(() => {
+        setInterval(()=>{
+            [...document.querySelectorAll(".interval_title")].map(el=>el.classList.add("none"));
+            title_index++;
+            if(title_index>2) title_index=0;
+            document.querySelectorAll(".interval_title")[title_index].classList.remove("none");
+        },1500);
+    }, []);
+
 
     return (
         <>
-            <div className={"flex flex-col gap-4 justify-center items-center"}>
+            <div id={"profile"} className={"flex flex-col gap-4 justify-center items-center"}>
                 <div>
                     <Image></Image>
                 </div>
@@ -34,20 +37,20 @@ function Profile(props) {
                     <div className={"grid-cols-2 grid"}>
                         <div className={"grid grid-cols-[1fr_3fr]"}>
                         <h4>Name</h4>
-                        <h4 className={"text-amber-400 font-bold"}>최준호</h4>
+                        <h4 className={"text-amber-500 font-bold text-shadow-2xs"}>최준호</h4>
                         </div>
                         <div className={"grid grid-cols-[1fr_3fr]"}>
                             <h4>Age</h4>
-                            <h4 className={"text-amber-400 font-bold"}>1992.05</h4>
+                            <h4 className={"text-amber-500 font-bold text-shadow-2xs"}>1992.05</h4>
                         </div>
 
                         <div className={"grid grid-cols-[1fr_3fr]"}>
                         <h4>Phone</h4>
-                        <h4 className={"text-amber-400 font-bold"}>010-73685337</h4>
+                        <h4 className={"text-amber-500 font-bold text-shadow-2xs"}>010-7368-5337</h4>
                         </div>
                         <div className={"grid grid-cols-[1fr_3fr]"}>
                             <h4>GitHub</h4>
-                            <h4 className={"text-amber-400 font-bold cursor-pointer"} onClick={()=>{window.open("https://github.com/haracedaily","_blank","location=no,menubar=no,status=no")}}>https://github.com/haracedaily</h4>
+                            <h4 className={"text-amber-500 font-bold cursor-pointer text-shadow-2xs"} onClick={()=>{window.open("https://github.com/haracedaily","_blank","location=no,menubar=no,status=no")}}>https://github.com/haracedaily</h4>
                         </div>
                     </div>
                 </div>
