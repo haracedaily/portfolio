@@ -26,16 +26,16 @@ function App() {
     const [scrollLoad,setScrollLoad] = useState(false);
     const mainRef = useRef(null);
     const checkScroll = (e)=>{
-        console.log(currentScroll);
-        console.log("타겟 높이",e.target.clientHeight);
-        console.log("총 높이", e.target.scrollHeight);
-        console.log("계산높이",currentScroll+(Math.floor(e.target.clientHeight)*0.1));
-        console.log("???",currentScroll+Math.floor(mainRef.current.clientHeight));
+        // console.log(currentScroll);
+        // console.log("타겟 높이",e.target.clientHeight);
+        // console.log("총 높이", e.target.scrollHeight);
+        // console.log("계산높이",currentScroll+(Math.floor(e.target.clientHeight)*0.1));
+        // console.log("???",currentScroll+Math.floor(mainRef.current.clientHeight));
         let targetTop = Math.floor(e.target.scrollTop);
-        console.log("현 높이",targetTop);
-        console.log("조건",targetTop>currentScroll+(Math.floor(e.target.clientHeight)*0.1));
-        console.log("조건2",!((targetTop === Math.floor(e.target.scrollHeight)-Math.floor(e.target.clientHeight))));
-        console.log("scrollLoad",scrollLoad);
+        // console.log("현 높이",targetTop);
+        // console.log("조건",targetTop>currentScroll+(Math.floor(e.target.clientHeight)*0.1));
+        // console.log("조건2",!((targetTop === Math.floor(e.target.scrollHeight)-Math.floor(e.target.clientHeight))));
+        // console.log("scrollLoad",scrollLoad);
         if(targetTop===currentScroll||targetTop===Math.floor(e.target.scrollHeight)-Math.floor(e.target.clientHeight)||targetTop<currentScroll+(Math.floor(e.target.clientHeight)*0.1)&&targetTop>currentScroll-(Math.floor(e.target.clientHeight)*0.1)) {
             setScrollLoad(false);
         }
@@ -44,7 +44,7 @@ function App() {
         }
     if(targetTop>currentScroll+(Math.floor(e.target.clientHeight)*0.1)){
         if(!((targetTop === Math.floor(e.target.scrollHeight)-Math.floor(e.target.clientHeight)))){
-            console.log("여기 안 들어옴?");
+            // console.log("여기 안 들어옴?");
             setCurrentScroll(currentScroll+Math.floor(mainRef.current.clientHeight));
             setScrollLoad(true);
         }
