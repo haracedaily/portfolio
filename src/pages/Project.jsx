@@ -59,7 +59,7 @@ function Project(props) {
                     </div>
                 </div>
 
-                    {/*제빙기 사이트*/}
+                    {/*제빙기 관리자 사이트*/}
                     <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
                         <div className={`flex flex-col gap-4`}>
                             <h3 className={"font-bold text-3xl"}>IceCare_Admin</h3>
@@ -75,7 +75,7 @@ function Project(props) {
                             <h3>제빙기 청소업체의 관리자 사이트</h3>
                             <h3>역할</h3>
                             <h3>
-                                팀장, 대쉬보드(rechart.js, antd), 로그인, 레이아웃(html,css) 등 요청부분 지원<br/>
+                                팀장, 대쉬보드(rechart.js, antd), 로그인, 레이아웃(html,css) 등을 담당하였습니다.<br/>
                                 VITE+REACT 프로젝트로 생성하였으며, SUPABASE를 사용하여 데이터베이스를 구축하였습니다.
                                 bcryptjs를 사용하여 비밀번호 암호화를 구현하였으며, 레이아웃 자체는 html과 css로 구성하였으며, antd를 사용하여 구성요소를 배치하였습니다.
                                 recharts를 사용하여 대쉬보드의 차트 부분을 구현하였습니다.
@@ -88,6 +88,141 @@ function Project(props) {
                     </div>
                     
                     {/*제빙기 사이트 리뉴얼*/}
+                    <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
+                        <div className={`flex flex-col gap-4`}>
+                            <h3 className={"font-bold text-3xl"}>IceCare_renew</h3>
+                            <Image src={"/icecare.png"} ></Image>
+                        </div>
+                        <div className={"flex items-center"}>
+                            <div className={`grid grid-cols-[1fr_3fr] gap-4`}>
+                                <h3>팀원</h3>
+                                <h3>총 4명</h3>
+                                <h3>사용스택</h3>
+                                <h3>HTML, CSS, javascript, TailwindCss, sweetalert2, quill, swiper, vercel, SUPABASE</h3>
+                                <h3>내용</h3>
+                                <h3>제빙기 청소업체 사이트</h3>
+                                <h3>역할</h3>
+                                <h3>
+                                    팀장, 메인페이지(swiper, TailwindCss), 레이아웃(html,css+Tailwindcss) 등을 담당하였습니다.<br/>
+                                    VITE+VANILLA 프로젝트로 생성하였으며, SUPABASE를 사용하여 데이터베이스를 구축하였습니다.
+                                    TailwindCss를 사용하여 레이아웃을 구성하였으며, swiper를 사용하여 메인페이지의 슬라이드를 구현하였습니다.
+                                    갤러리의 전반적인 기능과 이미지파일 업로드는 SUPABASE의 rpc를 사용하여 구현하였으며, 갤러리 작성의 에디터로는 quill을 채택하였습니다.
+                                    quill을 채택한 이유는 다른 에디터보다 가벼웠고, 리턴되는 value가 html로 되어 있어, 별도의 변환이 필요하지 않았기 때문입니다.
+                                    sweetalert2를 사용하여 알림창을 구현하였으며, 배포는 github를 사용하였습니다.
+                                </h3>
+                                <h3>코드</h3>
+                                <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/renew_ice_clean","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {/*제빙기 사이트*/}
+                    <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
+                        <div className={`flex flex-col gap-4`}>
+                            <h3 className={"font-bold text-3xl"}>IceCare_origin(iceClean)</h3>
+                            <Image src={"/ice_clean.png"} ></Image>
+                        </div>
+                        <div className={"flex items-center"}>
+                            <div className={`grid grid-cols-[1fr_3fr] gap-4`}>
+                                <h3>팀원</h3>
+                                <h3>총 3(2)명</h3>
+                                <h3>사용스택</h3>
+                                <h3>HTML, CSS, javascript, gsap, googleTranslate, github</h3>
+                                <h3>내용</h3>
+                                <h3>제빙기 청소업체 사이트</h3>
+                                <h3>역할</h3>
+                                <h3>
+                                    팀장, 메인페이지(gsap, googleTranslate,html,css,js), 레이아웃(html,css) 등 요청부분 지원<br/>
+                                    VITE+VANILLA 프로젝트로 생성하였으며, gsap을 사용하여 메인페이지의 애니메이션을 구현하였고, googleTranslate를 사용하여 번역을 구현하였습니다.
+                                    다만 googleTranslate는 기능이 정확하지 않아, 현재는 사용하지 않고 있습니다.
+                                </h3>
+                                <h3>코드</h3>
+                                <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/iceClean","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/*일정앱*/}
+                    <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
+                        <div className={`flex flex-col gap-4`}>
+                            <h3 className={"font-bold text-3xl"}>withTime</h3>
+                            <Image src={"/with_time.png"} ></Image>
+                        </div>
+                        <div className={"flex items-center"}>
+                            <div className={`grid grid-cols-[1fr_3fr] gap-4`}>
+                                <h3>팀원</h3>
+                                <h3>총 4명</h3>
+                                <h3>사용스택</h3>
+                                <h3>HTML, CSS, javascript, github</h3>
+                                <h3>내용</h3>
+                                <h3>일정공유앱</h3>
+                                <h3>역할</h3>
+                                <h3>
+                                    팀장, 메인페이지(html,css,js), 레이아웃, 캘린더, 플래너 (html,css,js)를 담당하였습니다.<br/>
+                                    html, css, js만 사용하여 구성된 프로젝트로, 캘린더와 플래너를 구현하였습니다.
+                                    캘린더는 포커싱된 날짜 css를 변경하고, 달력 자체의 기능 구현에 집중하였습니다.
+                                    Today 버튼을 클릭하면 현재 날짜로 이동하며, 이전달, 다음달 버튼을 클릭하거나 우측 셀렉트박스를 선택하면 해당 월로 이동합니다.
+                                    연도 변경은 12월에서 다음달 또는 1월에서 이전달로 이동하게만 구현하였습니다.
+                                    플래너의 경우도 css에 집중하였으며 과정 초기에 구현하였던 프로젝트입니다.
+                                </h3>
+                                <h3>코드</h3>
+                                <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/studyList/tree/main/1st","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/*볼펜제조공장MES시스템*/}
+                    <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
+                        <div className={`flex flex-col gap-4`}>
+                            <h3 className={"font-bold text-3xl"}>penService</h3>
+                            <Image src={"/penService.png"} ></Image>
+                        </div>
+                        <div className={"flex items-center"}>
+                            <div className={`grid grid-cols-[1fr_3fr] gap-4`}>
+                                <h3>팀원</h3>
+                                <h3>총 5명</h3>
+                                <h3>사용스택</h3>
+                                <h3>HTML, CSS, JS, JQuery, BootStrap, Thymleaf, Spring Boot, MyBatis, Java, Spring Security, Oracle, AWS</h3>
+                                <h3>내용</h3>
+                                <h3>볼펜 제조 공장의 MES 도입 시스템 기준으로 개발</h3>
+                                <h3>역할</h3>
+                                <h3>
+                                    부팀장, MVC2 패턴으로 생산계획 관리 및 조회, 생산지시 관리 및 조회, 생산공정실적 관리, 생산공정실적 조회 페이지의 CRUD와 전반적인 지원을 담당하였습니다.<br/>
+                                    Spring Boot와 Thymleaf를 사용하여 MVC2 패턴으로 개발하였으며, MyBatis를 사용하여 데이터베이스와 연동하였습니다.
+                                    Pdfmake API를 이용하여 생산지시서 PDF 출력 기능을 구현하였으며, Toastr grid를 사용하여 자재나 공정등의 테이블을 구현하였습니다.
+                                    AWS를 사용하여 배포하였으며, Spring Security를 사용하여 로그인 기능을 구현하였었으며, DB는 Oracle을 사용하였습니다.
+                                    현재는 AWS에서 배포가 중단되었습니다.
+                                </h3>
+                                <h3>코드</h3>
+                                <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/san1313/PenService","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/*캠핑 웹사이트*/}
+                    <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
+                        <div className={`flex flex-col gap-4`}>
+                            <h3 className={"font-bold text-3xl"}>GoCamping</h3>
+                            <Image src={"/go_camping.png"} ></Image>
+                        </div>
+                        <div className={"flex items-center"}>
+                            <div className={`grid grid-cols-[1fr_3fr] gap-4`}>
+                                <h3>팀원</h3>
+                                <h3>총 4명</h3>
+                                <h3>사용스택</h3>
+                                <h3>HTML, CSS, JS, JQuery, BootStrap, JSTL, MyBatis, Java, Oracle</h3>
+                                <h3>내용</h3>
+                                <h3>캠핑용품 구매부터 캠핑장 예약, 커뮤니티 사이트</h3>
+                                <h3>역할</h3>
+                                <h3>
+                                    팀장, 카카오지도 API를 사용하여 지역별 숙박업체 소개(등록 캠핑장의 위치와 정보), FullCallendar를 이용한 숙박업체 예약 및 예약 수정, 아임포트API를 이용한 결제기능과 팀장으로서 전반적인 지원을 담당하였습니다.
+                                </h3>
+                                <h3>코드</h3>
+                                <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/Go-Camping","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
+                            </div>
+                        </div>
+                    </div>
+
                     
                 </div>
             </div>
