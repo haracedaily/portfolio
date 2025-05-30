@@ -42,20 +42,22 @@ function App() {
         if(scrollLoad) {
             return;
         }
-    if(targetTop>currentScroll+(Math.floor(e.target.clientHeight)*0.1)){
-        if(!((targetTop === Math.floor(e.target.scrollHeight)-Math.floor(e.target.clientHeight)))){
-            // console.log("여기 안 들어옴?");
-            setCurrentScroll(currentScroll+Math.floor(mainRef.current.clientHeight));
-            setScrollLoad(true);
-        }
-    }else if(targetTop<currentScroll-(Math.floor(e.target.clientHeight)*0.1)){
-        setScrollLoad(true);
-        if(targetTop)
-            if(currentScroll-Math.floor(mainRef.current.clientHeight)>0){
-        setCurrentScroll(currentScroll-Math.floor(mainRef.current.clientHeight));
+        if(targetTop>currentScroll+(Math.floor(e.target.clientHeight)*0.1)){
+            if(!((targetTop === Math.floor(e.target.scrollHeight)-Math.floor(e.target.clientHeight)))){
+                // console.log("여기 안 들어옴?");
+                setCurrentScroll(currentScroll+Math.floor(mainRef.current.clientHeight));
+                setScrollLoad(true);
             }
-        else setCurrentScroll(0);
-    };
+        }else if(targetTop<currentScroll-(Math.floor(e.target.clientHeight)*0.1)){
+            setScrollLoad(true);
+            if(targetTop)
+                if(currentScroll-Math.floor(mainRef.current.clientHeight)>0){
+            setCurrentScroll(currentScroll-Math.floor(mainRef.current.clientHeight));
+                }
+            else setCurrentScroll(0);
+
+            // scrollView.setFlingVelocity(0);
+        }
     }
 
     useEffect(()=>{
