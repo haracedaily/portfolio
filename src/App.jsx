@@ -25,6 +25,7 @@ function App() {
     const [currentScroll,setCurrentScroll] = useState(0);
     const [scrollLoad,setScrollLoad] = useState(false);
     const mainRef = useRef(null);
+    const currentPosition = useRef(0);
     const checkScroll = (e)=>{
         // console.log(currentScroll);
         // console.log("타겟 높이",e.target.clientHeight);
@@ -47,25 +48,31 @@ function App() {
                 // console.log("여기 안 들어옴?");
                 setCurrentScroll(currentScroll+Math.floor(mainRef.current.clientHeight));
                 setScrollLoad(true);
+                currentPosition.current=Math.round(currentScroll/Math.floor(mainRef.current.clientHeight))+1;
             }
         }else if(targetTop<currentScroll-(Math.floor(e.target.clientHeight)*0.1)){
             setScrollLoad(true);
             if(targetTop)
                 if(currentScroll-Math.floor(mainRef.current.clientHeight)>0){
             setCurrentScroll(currentScroll-Math.floor(mainRef.current.clientHeight));
+            currentPosition.current=Math.round(currentScroll/Math.floor(mainRef.current.clientHeight))-1;
                 }
-            else setCurrentScroll(0);
+            else {
+                    setCurrentScroll(0);
+                    currentPosition.current=0;
+                }
 
             // scrollView.setFlingVelocity(0);
         }
     }
+
 
     useEffect(()=>{
         mainRef.current.scrollTop=currentScroll;
     },[currentScroll])
     return (
         <>
-            <Header mainRef={mainRef} setCurrentScroll={setCurrentScroll} setScrollLoad={setScrollLoad}/>
+            <Header currentPosition={currentPosition} mainRef={mainRef} setCurrentScroll={setCurrentScroll} setScrollLoad={setScrollLoad}/>
             <SideBar />
             <main className={`${scrollLoad&&"change_screen"} h-[90vh] bg-obliq-orange text-white overflow-y-auto`} onScroll={checkScroll} ref={mainRef}>
             <Profile/>
