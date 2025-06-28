@@ -13,12 +13,36 @@ function Project(props) {
                     <h3 className={styles.skill_title+" text-3xl font-bold"}>Project</h3>
                 </div>
                 <div style={{padding:"2rem"}} className={"flex flex-col gap-16 overflow-y-auto h-[70vh]"}>
+                    {/*제빙기 청소기사 앱*/}
+                    <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
+                        <div className={`flex flex-col gap-4`}>
+                            <h3 className={"font-bold text-3xl"}>제빙기 청소기사 PWA 어플리케이션</h3>
+                            <Image src={"/icecare_Pwa.png"} onClick={()=>{window.open("https://port-0-cleaning-node-managdgo41797b84.sel4.cloudtype.app/","_blank","location=no,menubar=no,status=no")}}></Image>
+                        </div>
+                        <div className={"flex items-center"}>
+                            <div className={`grid grid-cols-[1fr_3fr] gap-4`}>
+                                <h3>팀원</h3>
+                                <h3>총 1명</h3>
+                                <h3>사용스택</h3>
+                                <h3>HTML, CSS, javascript, Node.js, Expressjs, nunjucks, web-push, PWA, CloudType</h3>
+                                <h3>내용</h3>
+                                <h3>
+                                    Node기반의 프로젝트로 nunjucks 템플릿 엔진으로 동적인 화면을 구현하였습니다.
+                                    또한, PWA를 구현하여 service-worker.js와 web-push를 이용한 알림 서비스를 구현하였습니다.
+                                    해당 부분에서 Rest API를 만들어 제빙기 관리자 사이트에서 해당 API를 사용하거나 제빙기 청소기사 어플리케이션에서 사용합니다.
+                                    CloudType의 free-tier로 배포하여 하루에 한번 서버가 내려가는 문제점이 있습니다.
+                                </h3>
+                                <h3>코드</h3>
+                                <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/cleaning_node","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
+                            </div>
+                        </div>
+                    </div>
 
                     {/*포트폴리오*/}
                     <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
                         <div className={`flex flex-col gap-4`}>
                             <h3 className={"font-bold text-3xl"}>포트폴리오</h3>
-                            <Image src={"/portfolio.png"} ></Image>
+                            <Image src={"/portfolio.png"} onClick={()=>{window.open("https://portfolio-silk-eight-20.vercel.app/","_blank","location=no,menubar=no,status=no")}}></Image>
                         </div>
                         <div className={"flex items-center"}>
                             <div className={`grid grid-cols-[1fr_3fr] gap-4`}>
@@ -38,7 +62,7 @@ function Project(props) {
                 <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
                     <div className={`flex flex-col gap-4`}>
                     <h3 className={"font-bold text-3xl"}>StarBus</h3>
-                        <Image src={"/starbus.png"} ></Image>
+                        <Image src={"/starbus.png"} onClick={()=>{window.open("https://public-traffic-alpha.vercel.app/","_blank","location=no,menubar=no,status=no")}}></Image>
                     </div>
                     <div className={"flex items-center"}>
                     <div className={`grid grid-cols-[1fr_3fr] gap-4`}>
@@ -63,7 +87,7 @@ function Project(props) {
                     <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
                         <div className={`flex flex-col gap-4`}>
                             <h3 className={"font-bold text-3xl"}>IceCare_Admin</h3>
-                            <Image src={"/icecare_admin.png"} ></Image>
+                            <Image src={"/icecare_admin.png"} onClick={()=>{window.open("https://ice-care-admin.vercel.app/","_blank","location=no,menubar=no,status=no")}}></Image>
                         </div>
                         <div className={"flex items-center"}>
                         <div className={`grid grid-cols-[1fr_3fr] gap-4`}>
@@ -91,7 +115,7 @@ function Project(props) {
                     <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
                         <div className={`flex flex-col gap-4`}>
                             <h3 className={"font-bold text-3xl"}>IceCare_renew</h3>
-                            <Image src={"/icecare.png"} ></Image>
+                            <Image src={"/icecare.png"} onClick={()=>{window.open("https://haracedaily.github.io/renew_ice_clean/","_blank","location=no,menubar=no,status=no")}}></Image>
                         </div>
                         <div className={"flex items-center"}>
                             <div className={`grid grid-cols-[1fr_3fr] gap-4`}>
@@ -120,7 +144,7 @@ function Project(props) {
                     <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
                         <div className={`flex flex-col gap-4`}>
                             <h3 className={"font-bold text-3xl"}>IceCare_origin(iceClean)</h3>
-                            <Image src={"/ice_clean.png"} ></Image>
+                            <Image src={"/ice_clean.png"} onClick={()=>{window.open("https://haracedaily.github.io/iceClean/index.html","_blank","location=no,menubar=no,status=no")}}></Image>
                         </div>
                         <div className={"flex items-center"}>
                             <div className={`grid grid-cols-[1fr_3fr] gap-4`}>
@@ -146,7 +170,7 @@ function Project(props) {
                     <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
                         <div className={`flex flex-col gap-4`}>
                             <h3 className={"font-bold text-3xl"}>withTime</h3>
-                            <Image src={"/with_time.png"} ></Image>
+                            <Image src={"/with_time.png"} onClick={()=>{window.open("https://haracedaily.github.io/studyList/1st/login.html","_blank","location=no,menubar=no,status=no")}}></Image>
                         </div>
                         <div className={"flex items-center"}>
                             <div className={`grid grid-cols-[1fr_3fr] gap-4`}>
