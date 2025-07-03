@@ -3,20 +3,11 @@ import styles from '../css/header.module.css'
 
 function Header(props) {
     const [mainHeight,setMainHeight] = useState();
-    const [configOpen,setConfigOpen] = useState(false);
+
     useEffect(()=>{
     setMainHeight(document.querySelector("main").clientHeight);
     },[])
-    useEffect(() => {
-        const con = document.querySelector(".config-close");
-        if(con)
-            setTimeout(()=>{
-                con.classList.add("none");
-            },500);
-        else{
-            document.querySelector(".config-open").classList.remove("none");
-        }
-    },[configOpen])
+
 
     return (
         <>
@@ -29,13 +20,7 @@ function Header(props) {
                         <li className={props.currentPosition.current===2?styles.choose_li:""} onClick={()=>{props.setCurrentScroll(Math.floor(mainHeight*2));props.setScrollLoad(true);props.currentPosition.current=2;}}>Experience</li>
                         <li className={props.currentPosition.current===3?styles.choose_li:""} onClick={()=>{props.setCurrentScroll(Math.floor(mainHeight*3));props.setScrollLoad(true);props.currentPosition.current=3;}}>Project</li>
                     </ul>
-                    <div className={`${configOpen?"grid config-open":"config-close"} ${props.backConfig==="dark"?"border-white":"border-black"}`} style={{position:"fixed",bottom:"6.5rem",right:"2rem",gridTemplateColumns:"1fr 1fr",fontSize:"1rem",borderRadius:"5px",overflow:"hidden"}}>
-                        <div style={{padding:".3rem",paddingRight:"1rem",backgroundColor:"white",color:"black",cursor:"pointer"}} onClick={()=>{props.setBackConfig("light")}}>Light</div>
-                        <div style={{padding:".3rem",paddingLeft:"1rem",backgroundColor:"black",color:"white",cursor:"pointer"}} onClick={()=>{props.setBackConfig("dark")}}>Dark</div>
-                    </div>
-                    <div style={{position:"fixed",bottom:"3rem",right:"3rem",fontSize:"2rem",cursor:"pointer"}} onClick={()=>{setConfigOpen(!configOpen)}}>
-                        ⚙
-                    </div>
+
                 </div>
             </header>
         </>

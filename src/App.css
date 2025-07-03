@@ -134,3 +134,9 @@
 .bg\-obliq\-white{
     background-image : linear-gradient(50deg,#ffc600 23%,#ffffff 23% 100%);
 }
+
+.skills h3{
+    padding:0.2rem;
+    border-radius: 5px;
+    font-weight:bold;
+}

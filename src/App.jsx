@@ -1,4 +1,4 @@
-import {useEffect, useRef, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import './App.css'
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Profile from "./pages/Profile.jsx";
@@ -26,7 +26,18 @@ function App() {
     const [scrollLoad,setScrollLoad] = useState(false);
     const [backConfig,setBackConfig] = useState("dark");
     const mainRef = useRef(null);
+    const [configOpen,setConfigOpen] = useState(false);
     const currentPosition = useRef(0);
+    useEffect(() => {
+        const con = document.querySelector(".config-close");
+        if(con)
+            setTimeout(()=>{
+                con.classList.add("none");
+            },500);
+        else{
+            document.querySelector(".config-open").classList.remove("none");
+        }
+    },[configOpen])
     const checkScroll = (e)=>{
         // console.log(currentScroll);
         // console.log("타겟 높이",e.target.clientHeight);
@@ -81,7 +92,13 @@ function App() {
             <Experience backConfig={backConfig}/>
             <Project backConfig={backConfig}/>
             </main>
-
+            <div className={`${configOpen?"grid config-open":"config-close"} ${backConfig==="dark"?"border-white":"border-black"}`} style={{position:"fixed",bottom:"6.5rem",right:"2rem",gridTemplateColumns:"1fr 1fr",fontSize:"1rem",borderRadius:"5px",overflow:"hidden",zIndex:999999999}}>
+                <div style={{padding:".3rem",paddingLeft:"0.6rem",paddingRight:"0.6rem",backgroundColor:"white",color:"black",cursor:"pointer"}} onClick={()=>{setBackConfig("light")}}>Light</div>
+                <div style={{padding:".3rem",paddingRight:"0.6rem",paddingLeft:"0.6rem",backgroundColor:"black",color:"white",cursor:"pointer"}} onClick={()=>{setBackConfig("dark")}}>Dark</div>
+            </div>
+            <div style={{position:"fixed",bottom:"3rem",right:"3rem",fontSize:"2rem",cursor:"pointer",zIndex:999999999}} onClick={()=>{setConfigOpen(!configOpen)}}>
+                ⚙
+            </div>
         </>
     )
 }
