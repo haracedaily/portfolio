@@ -24,6 +24,7 @@ function App() {
     } = theme.useToken();
     const [currentScroll,setCurrentScroll] = useState(0);
     const [scrollLoad,setScrollLoad] = useState(false);
+    const [backConfig,setBackConfig] = useState("dark");
     const mainRef = useRef(null);
     const currentPosition = useRef(0);
     const checkScroll = (e)=>{
@@ -72,13 +73,13 @@ function App() {
     },[currentScroll])
     return (
         <>
-            <Header currentPosition={currentPosition} mainRef={mainRef} setCurrentScroll={setCurrentScroll} setScrollLoad={setScrollLoad}/>
+            <Header currentPosition={currentPosition} mainRef={mainRef} setCurrentScroll={setCurrentScroll} setScrollLoad={setScrollLoad} setBackConfig={setBackConfig} backConfig={backConfig}/>
             <SideBar />
-            <main className={`${scrollLoad&&"change_screen"} h-[90vh] bg-obliq-orange text-white overflow-y-auto`} onScroll={checkScroll} ref={mainRef}>
-            <Profile/>
-            <Skill  />
-            <Experience />
-            <Project />
+            <main className={`${scrollLoad&&"change_screen"} h-[90vh] ${backConfig==="dark"?"bg-obliq-orange":"bg-obliq-white"} text-white overflow-y-auto`} onScroll={checkScroll} ref={mainRef}>
+            <Profile backConfig={backConfig}/>
+            <Skill backConfig={backConfig} />
+            <Experience backConfig={backConfig}/>
+            <Project backConfig={backConfig}/>
             </main>
 
         </>

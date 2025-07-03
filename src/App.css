@@ -20,7 +20,47 @@
 }
 
 .none{
-    display: none;
+    display: none !important;
+}
+.zero{
+    opacity:0;
+}
+
+.config-open{
+    animation: fade-up 0.5s;
+    opacity:1;
+}
+.config-close{
+    display:grid;
+    animation: fade-down 0.5s;
+    opacity:0;
+}
+.white{
+    color:white !important;
+}
+.black{
+    color:black !important;
+}
+@keyframes fade-up{
+    0%{
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fade-down {
+    0%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
 }
 .change_screen{
     animation:change_screen_ani 0.5s ease-in-out;
@@ -33,6 +73,12 @@
     overflow: hidden;
     white-space: nowrap;
     animation: interval_title 1.5s ease-in-out infinite;
+}
+.border-white{
+    border:1px solid white !important;
+}
+.border-black{
+    border:1px solid black !important;
 }
 @keyframes change_screen_ani {
     0%{
@@ -84,4 +130,7 @@
 
 .bg\-obliq\-orange{
     background-image : linear-gradient(60deg,#ffc600 30%,#000000 30% 100%);
+}
+.bg\-obliq\-white{
+    background-image : linear-gradient(60deg,#ffc600 30%,#ffffff 30% 100%);
 }

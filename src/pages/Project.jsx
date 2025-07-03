@@ -10,14 +10,14 @@ function Project(props) {
         <>
             <div id={"project"} className={"flex flex-col gap-4 justify-center items-center"}>
                 <div>
-                    <h3 className={styles.skill_title+" text-3xl font-bold"}>Project</h3>
+                    <h3 className={styles.skill_title+` text-3xl font-bold ${props.backConfig==="dark"?"white":"black"}`}>Project</h3>
                 </div>
-                <div style={{padding:"2rem"}} className={"flex flex-col gap-16 overflow-y-auto h-[70vh]"}>
+                <div style={{padding:"2rem"}} className={`flex flex-col gap-16 overflow-y-auto h-[70vh] ${props.backConfig==="dark"?"white":"black"}`}>
                     {/*제빙기 청소기사 앱*/}
                     <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
                         <div className={`flex flex-col gap-4`}>
                             <h3 className={"font-bold text-3xl"}>제빙기 청소기사 PWA 어플리케이션</h3>
-                            <Image src={"/icecare_Pwa.png"} onClick={()=>{window.open("https://port-0-cleaning-node-managdgo41797b84.sel4.cloudtype.app/","_blank","location=no,menubar=no,status=no")}}></Image>
+                            <Image src={"/icecare_Pwa.png"} width={400} onClick={()=>{window.open("https://port-0-cleaning-node-managdgo41797b84.sel4.cloudtype.app/","_blank","location=no,menubar=no,status=no")}}></Image>
                         </div>
                         <div className={"flex items-center"}>
                             <div className={`grid grid-cols-[1fr_3fr] gap-4`}>
