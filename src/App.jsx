@@ -96,8 +96,10 @@ function App() {
                 <div style={{padding:".3rem",paddingLeft:"0.6rem",paddingRight:"0.6rem",backgroundColor:"white",color:"black",cursor:"pointer"}} onClick={()=>{setBackConfig("light")}}>Light</div>
                 <div style={{padding:".3rem",paddingRight:"0.6rem",paddingLeft:"0.6rem",backgroundColor:"black",color:"white",cursor:"pointer"}} onClick={()=>{setBackConfig("dark")}}>Dark</div>
             </div>
-            <div style={{position:"fixed",bottom:"3rem",right:"3rem",fontSize:"2rem",cursor:"pointer",zIndex:999999999}} onClick={()=>{setConfigOpen(!configOpen)}}>
-                ⚙
+            <div style={{width:"45px",height:"45px",borderRadius:"50%",backgroundColor:"white",border:"1px solid black",position:"fixed",bottom:"3rem",right:"3rem",fontSize:"30px",cursor:"pointer",zIndex:999999999,display:"flex",justifyContent:"center",alignItems:"center"}} onClick={()=>{setConfigOpen(!configOpen)}}>
+                <div>
+                    ⚙
+                </div>
             </div>
         </>
     )

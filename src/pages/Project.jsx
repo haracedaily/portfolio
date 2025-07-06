@@ -13,11 +13,33 @@ function Project(props) {
                     <h3 className={styles.skill_title+` text-3xl font-bold ${props.backConfig==="dark"?"white":"black"}`}>Project</h3>
                 </div>
                 <div style={{padding:"2rem"}} className={`flex flex-col gap-16 overflow-y-auto h-[70vh] ${props.backConfig==="dark"?"white":"black"}`}>
+
+                    <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
+                        <div className={`flex flex-col gap-4`}>
+                            <h3 className={"font-bold text-3xl"}>C# 간편 스케줄러</h3>
+                            <Image src={"/schedular.png"} onClick={()=>{window.open("https://github.com/haracedaily/c-Study","_blank","location=no,menubar=no,status=no")}}></Image>
+                        </div>
+                        <div className={"flex items-center"}>
+                            <div className={`grid grid-cols-[1fr_3fr] gap-4`}>
+                                <h3>팀원</h3>
+                                <h3>총 1명</h3>
+                                <h3>사용스택</h3>
+                                <h3>C#, winform</h3>
+                                <h3>내용</h3>
+                                <h3>winform 기반의 C#으로 작업하고 있으며, 기간은 2025-07-06부터 시작한 미니프로젝트입니다.
+                                    07-06(토)부터 주제를 정하고 작업 중이라 디자인적인 부분은 배제하고 구현 중이며, 학습 목적 프로젝트입니다.</h3>
+                                <h3>코드</h3>
+                                <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/c-Study","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
+                            </div>
+                        </div>
+                    </div>
+
+
                     {/*제빙기 청소기사 앱*/}
                     <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
                         <div className={`flex flex-col gap-4`}>
                             <h3 className={"font-bold text-3xl"}>제빙기 청소기사 PWA 어플리케이션</h3>
-                            <Image src={"/icecare_Pwa.png"} width={400} preview={false} onClick={()=>{window.open("https://port-0-cleaning-node-managdgo41797b84.sel4.cloudtype.app/","_blank","location=no,menubar=no,status=no")}}></Image>
+                            <Image src={"/icecare_Pwa.png"} width={350} preview={false} onClick={()=>{window.open("https://port-0-cleaning-node-managdgo41797b84.sel4.cloudtype.app/","_blank","location=no,menubar=no,status=no")}}></Image>
                         </div>
                         <div className={"flex items-center"}>
                             <div className={`grid grid-cols-[1fr_3fr] gap-4`}>
@@ -31,6 +53,8 @@ function Project(props) {
                                     또한, PWA를 구현하여 service-worker.js와 web-push를 이용한 알림 서비스를 구현하였습니다.
                                     해당 부분에서 Rest API를 만들어 제빙기 관리자 사이트에서 해당 API를 사용하거나 제빙기 청소기사 어플리케이션에서 사용합니다.
                                     CloudType의 free-tier로 배포하여 하루에 한번 서버가 내려가는 문제점이 있습니다.
+                                    제빙기 청소기사 어플리케이션 자체는 단독으로 구현 하였지만, 프로젝트 전체 구성은 사용자 사이트, 점주 PWA 어플리케이션, 관리자 사이트, 청소기사 PWA 어플리케이션으로 구성되어있습니다.
+                                    Rest API 테스트와 디자인 요소, 시스템 로직등은 다른 파트를 담당한 팀원분들과 회의를 거쳐 방향을 정했습니다.
                                 </h3>
                                 <h3>코드</h3>
                                 <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/cleaning_node","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>

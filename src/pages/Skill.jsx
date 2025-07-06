@@ -28,8 +28,8 @@ function Skill(props) {
                             <h3 className={"bg-green-300"}>Node.js</h3>
                             <h3 className={"bg-green-500"}>Express.js</h3>
                             <h3 className={"bg-green-700"}>Spring</h3>
-                            <h3 className={"bg-green-800"}>Spring Boot</h3>
                             <h3 className={"bg-cyan-800"}>Java</h3>
+                            <h3 className={"bg-green-800 col-span-2"}>Spring Boot</h3>
                         </div>
                     </div>
 
