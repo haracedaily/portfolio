@@ -17,7 +17,7 @@ function Project(props) {
                     <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
                         <div className={`flex flex-col gap-4`}>
                             <h3 className={"font-bold text-3xl"}>C# 간편 스케줄러</h3>
-                            <a href={"/schedular.png"} download={"schedular.png"}>
+                            <a href={"/schedule.exe"} download={"schedular.exe"}>
                             <Image src={"/schedular.png"} onClick={()=>{
                                 event.preventDefault();
                                 }}></Image>
