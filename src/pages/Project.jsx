@@ -17,23 +17,28 @@ function Project(props) {
                     <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
                         <div className={`flex flex-col gap-4`}>
                             <h3 className={"font-bold text-3xl"}>C# 간편 스케줄러</h3>
-                            <a href={"/schedule.exe"} download={"schedular.exe"}>
-                            <Image src={"/schedular.png"} onClick={()=>{
+                            <a href={"/schedule.zip"} download={"schedular.zip"}>
+                                다운로드
+                            </a>
+                            <Image src={"/schedule.png"} onClick={()=>{
                                 event.preventDefault();
                                 }}></Image>
-                            </a>
                         </div>
                         <div className={"flex items-center"}>
                             <div className={`grid grid-cols-[1fr_3fr] gap-4`}>
                                 <h3>팀원</h3>
                                 <h3>총 1명</h3>
                                 <h3>사용스택</h3>
-                                <h3>C#, winform</h3>
+                                <h3>C#, winform, supabase</h3>
                                 <h3>내용</h3>
-                                <h3>winform 기반의 C#으로 작업하고 있으며, 기간은 2025-07-06부터 시작한 미니프로젝트입니다.
-                                    07-06(토)부터 주제를 정하고 작업 중이라 디자인적인 부분은 배제하고 구현 중이며, 학습 목적 프로젝트입니다.</h3>
+                                <h3>Winform 기반의 C#으로 작업하였으며, 작업기간은 2025.07.06 - 2025.07.11입니다.
+                                    07-06(토)부터 주제를 정하고 시작한 프로젝트로 학습 목적과 점검용으로 만든 토이프로젝트입니다.
+                                    DB는 Supabase를 이용하였습니다.
+                                </h3>
                                 <h3>코드</h3>
                                 <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/c-Study/tree/main/TODO-List","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
+                                <h3>프로젝트내용</h3>
+                                <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/C-228cb7b25b638001afb7ccf665d4cec0","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
                             </div>
                         </div>
                     </div>
@@ -62,6 +67,8 @@ function Project(props) {
                                 </h3>
                                 <h3>코드</h3>
                                 <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/cleaning_node","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
+                                <h3>프로젝트내용</h3>
+                                <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/217cb7b25b638032bf86e04a1f4b1fba","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
                             </div>
                         </div>
                     </div>
@@ -82,6 +89,8 @@ function Project(props) {
                                 <h3>VITE+REACT 프로젝트로 생성하였으며, useState와 useRef 훅으로 스크롤 이벤트를 구현하였습니다. 내부적으로 TailwindCss를 가장 많이 사용하였고, 별도로 css가 필요한 경우 module.css를 사용하였습니다. 배포는 vercel로 하였습니다.</h3>
                                 <h3>코드</h3>
                                 <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/portfolio","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
+                                <h3>프로젝트내용</h3>
+                                <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/1ffcb7b25b6380df8d73f98ab8b47d36","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
                             </div>
                         </div>
                     </div>
@@ -107,6 +116,8 @@ function Project(props) {
                         </h3>
                         <h3>코드</h3>
                         <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/publicTraffic","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
+                        <h3>프로젝트내용</h3>
+                        <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/1f4cb7b25b6380439d6bfcd5b6b6135b","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
                     </div>
                     </div>
                 </div>
@@ -135,6 +146,8 @@ function Project(props) {
                             </h3>
                             <h3>코드</h3>
                             <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/ice_care_admin","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
+                            <h3>프로젝트내용</h3>
+                            <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/1cfcb7b25b6380a891c5d4496330e77f","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
                         </div>
                         </div>
                     </div>
@@ -164,6 +177,8 @@ function Project(props) {
                                 </h3>
                                 <h3>코드</h3>
                                 <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/renew_ice_clean","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
+                                <h3>프로젝트내용</h3>
+                                <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/1cfcb7b25b638077b304dfe2abbfef4d","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
                             </div>
                         </div>
                     </div>
@@ -190,6 +205,8 @@ function Project(props) {
                                 </h3>
                                 <h3>코드</h3>
                                 <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/iceClean","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
+                                <h3>프로젝트내용</h3>
+                                <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/1a1cb7b25b6380b3b8d1f0952ef69527","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
                             </div>
                         </div>
                     </div>
@@ -219,6 +236,8 @@ function Project(props) {
                                 </h3>
                                 <h3>코드</h3>
                                 <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/studyList/tree/main/1st","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
+                                <h3>프로젝트내용</h3>
+                                <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/UI-html-css-javascri-199cb7b25b6380248918e9763f319bdd","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
                             </div>
                         </div>
                     </div>
