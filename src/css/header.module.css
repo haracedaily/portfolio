@@ -1,5 +1,8 @@
 .header_title{
     font-size: min(3vw,1.5rem);
+    &:hover{
+        color: #ffb900;
+    }
 }
 .header_ul{
         width:40%;
