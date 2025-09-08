@@ -246,6 +246,9 @@ function Project(props) {
                     <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
                         <div className={`flex flex-col gap-4`}>
                             <h3 className={"font-bold text-3xl"}>penService</h3>
+                            <a href={"/penService.pdf"} download={"pen_service.pdf"}>
+                                pdf
+                            </a>
                             <Image src={"/penService.png"} ></Image>
                         </div>
                         <div className={"flex items-center"}>
@@ -274,6 +277,9 @@ function Project(props) {
                     <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
                         <div className={`flex flex-col gap-4`}>
                             <h3 className={"font-bold text-3xl"}>GoCamping</h3>
+                            <a href={"/goCamping.pdf"} download={"go_camping.pdf"}>
+                                pdf
+                            </a>
                             <Image src={"/go_camping.png"} ></Image>
                         </div>
                         <div className={"flex items-center"}>
