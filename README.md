@@ -1,4 +1,4 @@
-#VITE + REACT
+# VITE + REACT
 
 Full-page scroll 인터랙션을 구현하기 위해 scrollTop 기반의 커스텀 스크롤 로직을 구현했습니다.
 
