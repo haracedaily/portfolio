@@ -11,7 +11,7 @@ function Header(props) {
 
     return (
         <>
-            <header className={`sticky top-0 font-sans shadow whitespace-nowrap ${props.backConfig==="dark"?"bg-black white":"bg-white black"}`}>
+            <header className={`sticky top-0 font-sans shadow whitespace-nowrap ${props.backConfig==="dark"?"bg-black white":"bg-gray-50 black"}`}>
                 <div className={"flex flex-row gap-4 h-[10vh] justify-around items-center"}>
                     <h3 className={styles.header_title+" font-bold"} style={{cursor:"pointer"}} onClick={()=>{props.setCurrentScroll(0);props.setScrollLoad(true);props.currentPosition.current=0;}}>CJH's</h3>
                     <ul className={styles.header_ul+" flex gap-3 "}>
