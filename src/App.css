@@ -16,7 +16,7 @@
 
 #root>main>*{
     height:90vh;
-    overflow: hidden;
+    /*overflow: auto;*/
 }
 
 .none{
@@ -63,9 +63,9 @@
 
 }
 .change_screen{
-    animation:change_screen_ani 0.5s ease-in-out;
+    animation:change_screen_ani 0.2s ease-in-out;
     &>*{
-        animation: zero_opacity 0.5s ease-in-out;
+        animation: zero_opacity 0.2s ease-in-out;
     }
 }
 .interval_title{
