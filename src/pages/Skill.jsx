@@ -2,11 +2,11 @@ import React from 'react';
 import styles from '../css/skill.module.css'
 import {useMediaQuery} from "react-responsive";
 
-function Skill(props) {
+function Skill() {
     const isMobile = useMediaQuery({maxWidth: 900});
     return (
         <>
-            <div id={"skill"} className={`flex flex-col gap-4 justify-center items-center ${props.backConfig==="dark"?"white":"black"}`}>
+            <div id={"skill"} className="flex flex-col gap-4 justify-center items-center text-white">
                 <div>
                     <h3 className={styles.skill_title+" text-3xl font-bold"}>Skill's</h3>
                 </div>
@@ -27,11 +27,12 @@ function Skill(props) {
                     <div className={`flex flex-col ${isMobile?"gap-1":"gap-4"} shadow-2xs`}>
                         <h3 className={`font-bold ${isMobile?"text-lg":"text-3xl"}`}>Back-End</h3>
                         <div className={"grid grid-cols-[1fr_1fr_1fr_1fr] gap-2 skills"}>
+                            <h3 className={"bg-cyan-500"}>Python</h3>
+                            <h3 className={"bg-green-800"}>Flask</h3>
                             <h3 className={"bg-green-300"}>Node.js</h3>
                             <h3 className={"bg-green-500"}>Express.js</h3>
                             <h3 className={"bg-green-700"}>Spring</h3>
                             <h3 className={"bg-cyan-800"}>Java</h3>
-                            <h3 className={"bg-green-800 col-span-2"}>Spring Boot</h3>
                         </div>
                     </div>
 
@@ -54,7 +55,8 @@ function Skill(props) {
                             <h3 className={"bg-pink-700 text-white"}>Intellij</h3>
                             <h3 className={"bg-blue-950 text-white"}>Eclipse</h3>
                             <h3 className={"col-span-2 bg-blue-500 text-white"}>Visual Studio</h3>
-                            <h3 className={"col-span-2 bg-cyan-500 text-white"}>WebStorm</h3>
+                            <h3 className={"bg-cyan-500 text-white"}>WebStorm</h3>
+                            <h3 className={"bg-cyan-900 text-white"}>slack</h3>
                         </div>
                     </div>
                 </div>

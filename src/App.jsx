@@ -1,16 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react'
 import './App.css'
-import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Profile from "./pages/Profile.jsx";
-import {Layout, Menu, Button, theme, Flex} from "antd";
-import {
-    MenuFoldOutlined,
-    MenuUnfoldOutlined,
-    UploadOutlined,
-    UserOutlined,
-    VideoCameraOutlined,
-} from '@ant-design/icons';
-import Main from "./layout/Main.jsx";
 import Header from "./layout/Header.jsx";
 import SideBar from "./layout/SideBar.jsx";
 import Skill from "./pages/Skill.jsx";
@@ -18,89 +8,71 @@ import Experience from "./pages/Experience.jsx";
 import Project from "./pages/Project.jsx";
 
 function App() {
-    const [collapsed, setCollapsed] = useState(false);
-    const {
-        token: {colorBgContainer, borderRadiusLG},
-    } = theme.useToken();
-    const [currentScroll,setCurrentScroll] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(0);
     const [scrollLoad,setScrollLoad] = useState(false);
-    const [backConfig,setBackConfig] = useState("dark");
     const mainRef = useRef(null);
-    const [configOpen,setConfigOpen] = useState(false);
-    const currentPosition = useRef(0);
-    useEffect(() => {
-        const con = document.querySelector(".config-close");
-        if(con)
-            setTimeout(()=>{
-                con.classList.add("none");
-            },500);
-        else{
-            document.querySelector(".config-open").classList.remove("none");
-        }
-    },[configOpen])
-    const checkScroll = (e)=>{
-        // console.log(currentScroll);
-        // console.log("타겟 높이",e.target.clientHeight);
-        // console.log("총 높이", e.target.scrollHeight);
-        // console.log("계산높이",currentScroll+(Math.floor(e.target.clientHeight)*0.1));
-        // console.log("???",currentScroll+Math.floor(mainRef.current.clientHeight));
-        let targetTop = Math.floor(e.target.scrollTop);
-        // console.log("현 높이",targetTop);
-        // console.log("조건",targetTop>currentScroll+(Math.floor(e.target.clientHeight)*0.1));
-        // console.log("조건2",!((targetTop === Math.floor(e.target.scrollHeight)-Math.floor(e.target.clientHeight))));
-        // console.log("scrollLoad",scrollLoad);
-        if(targetTop===currentScroll||targetTop===Math.floor(e.target.scrollHeight)-Math.floor(e.target.clientHeight)||targetTop<currentScroll+(Math.floor(e.target.clientHeight)*0.1)&&targetTop>currentScroll-(Math.floor(e.target.clientHeight)*0.1)) {
-            setScrollLoad(false);
-        }
-        if(scrollLoad) {
-            return;
-        }
-        if(targetTop>currentScroll+(Math.floor(e.target.clientHeight)*0.1)){
-            if(!((targetTop === Math.floor(e.target.scrollHeight)-Math.floor(e.target.clientHeight)))){
-                // console.log("여기 안 들어옴?");
-                setCurrentScroll(currentScroll+Math.floor(mainRef.current.clientHeight));
-                setScrollLoad(true);
-                currentPosition.current=Math.round(currentScroll/Math.floor(mainRef.current.clientHeight))+1;
+    const scrollTimerRef = useRef(null);
+    const sectionBgClasses = ["bg-obliq-orange","bg-obliq-orange-2","bg-obliq-orange-3","bg-obliq-orange-4"];
+    const mainBgClass = sectionBgClasses[Math.min(currentIndex, sectionBgClasses.length - 1)] || sectionBgClasses[0];
+    const scrollToSection = (index) => {
+        if (!mainRef.current) return;
+        const sections = Array.from(mainRef.current.children).filter((node) => node.tagName === "SECTION");
+        const target = sections[index];
+        if (!target) return;
+        setCurrentIndex(index);
+        setScrollLoad(true);
+        target.scrollIntoView({behavior: "smooth", block: "start"});
+    };
+
+    const updateActiveSection = () => {
+        if (!mainRef.current) return;
+        const sections = Array.from(mainRef.current.children).filter((node) => node.tagName === "SECTION");
+        if (!sections.length) return;
+        const viewportCenter = mainRef.current.scrollTop + mainRef.current.clientHeight / 2;
+        let nextIndex = 0;
+        let minDistance = Number.POSITIVE_INFINITY;
+
+        sections.forEach((section, index) => {
+            const distance = Math.abs(section.offsetTop + section.offsetHeight / 2 - viewportCenter);
+            if (distance < minDistance) {
+                minDistance = distance;
+                nextIndex = index;
             }
-        }else if(targetTop<currentScroll-(Math.floor(e.target.clientHeight)*0.1)){
-            setScrollLoad(true);
-            if(targetTop)
-                if(currentScroll-Math.floor(mainRef.current.clientHeight)>0){
-            setCurrentScroll(currentScroll-Math.floor(mainRef.current.clientHeight));
-            currentPosition.current=Math.round(currentScroll/Math.floor(mainRef.current.clientHeight))-1;
-                }
-            else {
-                    setCurrentScroll(0);
-                    currentPosition.current=0;
-                }
+        });
 
-            // scrollView.setFlingVelocity(0);
+        setCurrentIndex((prev) => (prev === nextIndex ? prev : nextIndex));
+    };
+
+    const checkScroll = () => {
+        if (scrollTimerRef.current) {
+            window.clearTimeout(scrollTimerRef.current);
         }
-    }
+        scrollTimerRef.current = window.setTimeout(updateActiveSection, 80);
+    };
 
+    useEffect(() => {
+        if (!scrollLoad) return;
+        const timer = window.setTimeout(() => setScrollLoad(false), 220);
+        return () => window.clearTimeout(timer);
+    }, [scrollLoad]);
 
-    useEffect(()=>{
-        mainRef.current.scrollTop=currentScroll;
-    },[currentScroll])
+    useEffect(() => {
+        return () => {
+            if (scrollTimerRef.current) {
+                window.clearTimeout(scrollTimerRef.current);
+            }
+        };
+    }, []);
     return (
         <>
-            <Header currentPosition={currentPosition} mainRef={mainRef} setCurrentScroll={setCurrentScroll} setScrollLoad={setScrollLoad} setBackConfig={setBackConfig} backConfig={backConfig}/>
+            <Header currentIndex={currentIndex} scrollToSection={scrollToSection} />
             <SideBar />
-            <main className={`${scrollLoad&&"change_screen"} h-[90vh] ${backConfig==="dark"?"bg-obliq-orange":"bg-obliq-white"} text-white overflow-y-auto`} onScroll={checkScroll} ref={mainRef}>
-            <Profile backConfig={backConfig}/>
-            <Skill backConfig={backConfig} />
-            <Experience backConfig={backConfig}/>
-            <Project backConfig={backConfig}/>
+            <main className={`${scrollLoad&&"change_screen"} h-[90vh] ${mainBgClass} text-white overflow-y-auto`} onScroll={checkScroll} ref={mainRef}>
+                <section className="section-block"><Profile /></section>
+                <section className="section-block"><Skill /></section>
+                <section className="section-block"><Experience /></section>
+                <section className="section-block"><Project /></section>
             </main>
-            <div className={`${configOpen?"grid config-open":"config-close"} ${backConfig==="dark"?"border-white":"border-black"}`} style={{position:"fixed",bottom:"6.5rem",right:"2rem",gridTemplateColumns:"1fr 1fr",fontSize:"1rem",borderRadius:"5px",overflow:"hidden",zIndex:999999999}}>
-                <div style={{padding:".3rem",paddingLeft:"0.6rem",paddingRight:"0.6rem",backgroundColor:"white",color:"black",cursor:"pointer"}} onClick={()=>{setBackConfig("light")}}>Light</div>
-                <div style={{padding:".3rem",paddingRight:"0.6rem",paddingLeft:"0.6rem",backgroundColor:"black",color:"white",cursor:"pointer"}} onClick={()=>{setBackConfig("dark")}}>Dark</div>
-            </div>
-            <div style={{width:"45px",height:"45px",borderRadius:"50%",backgroundColor:"white",border:"1px solid black",position:"fixed",bottom:"3rem",right:"3rem",fontSize:"30px",cursor:"pointer",zIndex:999999999,display:"flex",justifyContent:"center",alignItems:"center"}} onClick={()=>{setConfigOpen(!configOpen)}}>
-                <div>
-                    ⚙
-                </div>
-            </div>
         </>
     )
 }

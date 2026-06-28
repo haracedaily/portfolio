@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {Image} from "antd";
 import {useMediaQuery} from "react-responsive";
 
-function Profile(props) {
+function Profile() {
     const isMobile = useMediaQuery({maxWidth: 900});
     let title_index=0;
     useEffect(() => {
@@ -22,37 +22,37 @@ function Profile(props) {
                     <Image></Image>
                 </div>
                 <div className={"flex flex-col gap-3 text-white"}>
-                    <div className={`flex flex-row gap-2`}>
-                        <h3 className={`font-bold ${props.backConfig==="dark"?"white":"black"} ${isMobile?"text-lg":"text-2xl"}`}>I'm</h3>
-                        <h3 className={`opacity-0 interval_title text-amber-400 font-bold ${isMobile?"text-lg":"text-2xl"}`}>JoonHo Choi</h3>
-                        <h3 className={`none opacity-0 interval_title text-amber-400 font-bold ${isMobile?"text-lg":"text-2xl"}`}>Web Developer</h3>
-                        <h3 className={`none opacity-0 interval_title text-amber-400 font-bold ${isMobile?"text-lg":"text-2xl"}`}>FullStack Developer</h3>
+                    <div className={`flex flex-row gap-2 flex-wrap items-end`}>
+                        <h3 className={`font-bold text-white ${isMobile?"text-lg":"text-2xl"}`}>I'm</h3>
+                        <h3 className={`opacity-0 interval_title text-orange-300 font-semibold ${isMobile?"text-lg":"text-2xl"}`}>JoonHo Choi</h3>
+                        <h3 className={`none opacity-0 interval_title text-orange-300 font-semibold ${isMobile?"text-lg":"text-2xl"}`}>Web Developer</h3>
+                        <h3 className={`none opacity-0 interval_title text-orange-300 font-semibold ${isMobile?"text-lg":"text-2xl"}`}>FullStack Developer</h3>
                     </div>
-                    <div className={`${props.backConfig==="dark"?"white":"black"}`}>
+                    <div className="text-white">
                         <h4>안녕하세요, 저는 최준호입니다.</h4>
                         <h4>새로운 기술을 배우고 적용하는 것에 관심이 많으며, 상호 피드백하는 것을 좋아합니다.</h4>
-                        <h4>맡은 바 자부심을 가지고 도전할 수 있는 회사에서 일하고 싶습니다.</h4>
+                        <h4>맡은 바 자부심을 가지고 도전할 수 있는 곳에서 일하고 싶습니다.</h4>
                     </div>
                     <div className={"flex gap-2 flex-row"}>
-                        <h3 className={`${isMobile?"text-lg":"text-2xl"} font-bold ${props.backConfig==="dark"?"white":"black"}`}>Personal Info</h3>
+                        <h3 className={`${isMobile?"text-lg":"text-2xl"} font-bold text-white`}>Personal Info</h3>
                     </div>
                     <div className={"grid-cols-2 grid"}>
                         <div className={"grid grid-cols-[1fr_3fr]"}>
-                        <h4 className={`${props.backConfig==="dark"?"white":"black"}`}>Name</h4>
-                        <h4 className={"text-amber-500 font-bold text-shadow-2xs"}>최준호</h4>
+                        <h4 className="text-white">Name</h4>
+                        <h4 className={"text-orange-300 font-semibold"}>최준호</h4>
                         </div>
                         <div className={"grid grid-cols-[1fr_3fr]"}>
-                            <h4 className={`${props.backConfig==="dark"?"white":"black"}`}>Age</h4>
-                            <h4 className={"text-amber-500 font-bold text-shadow-2xs"}>1992.05</h4>
+                            <h4 className="text-white">Age</h4>
+                            <h4 className={"text-orange-300 font-semibold"}>1992.05</h4>
                         </div>
 
                         <div className={`grid ${isMobile?"col-span-2 grid-cols-[1fr_6fr]":"col-span-1 grid-cols-[1fr_3fr]"}`}>
-                        <h4 className={`${props.backConfig==="dark"?"white":"black"}`}>Phone</h4>
-                        <h4 className={`text-amber-500 font-bold text-shadow-2xs`}>010-7368-5337</h4>
+                        <h4 className="text-white">Phone</h4>
+                        <h4 className={`text-orange-300 font-semibold`}>010-7368-5337</h4>
                         </div>
                         <div className={`grid ${isMobile?"col-span-2 grid-cols-[1fr_6fr]":"col-span-1 grid-cols-[1fr_3fr]"}`}>
-                            <h4 className={`${props.backConfig==="dark"?"white":"black"}`}>GitHub</h4>
-                            <h4 className={"text-amber-500 font-bold cursor-pointer text-shadow-2xs"} onClick={()=>{window.open("https://github.com/haracedaily","_blank","location=no,menubar=no,status=no")}}>https://github.com/haracedaily</h4>
+                            <h4 className="text-white">GitHub</h4>
+                            <h4 className={"text-orange-300 font-semibold cursor-pointer"} onClick={()=>{window.open("https://github.com/haracedaily","_blank","location=no,menubar=no,status=no")}}>https://github.com/haracedaily</h4>
                         </div>
                     </div>
                 </div>

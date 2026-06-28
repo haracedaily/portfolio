@@ -3,100 +3,150 @@ import styles from "../css/skill.module.css";
 import {useMediaQuery} from "react-responsive";
 import {Image} from "antd";
 
-function Project(props) {
+function Project() {
     const isMobile = useMediaQuery({maxWidth: 900});
+    const cardClass = `grid gap-6 rounded-[1.75rem] border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-black/10 p-7 shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-sm transition duration-300 ease-out hover:-translate-y-1 hover:border-orange-400/30 hover:shadow-[0_24px_80px_rgba(255,140,0,0.16)] ${isMobile?"grid-cols-1":"grid-cols-[1.1fr_0.9fr]"}`;
+    const openFullScreen = (url) => {
+        window.open(url, "_blank", `width=${window.screen.availWidth},height=${window.screen.availHeight},top=0,left=0,location=no,menubar=no,status=no`);
+    };
 
     return (
         <>
             <div id={"project"} className={"flex flex-col gap-4 justify-center items-center"}>
                 <div>
-                    <h3 className={styles.skill_title+` text-3xl font-bold ${props.backConfig==="dark"?"white":"black"}`}>Project</h3>
+                    <h3 className={styles.skill_title+" text-3xl font-bold text-white"}>Project</h3>
                 </div>
-                <div style={{padding:"2rem"}} className={`flex flex-col gap-16 overflow-y-auto h-[70vh] ${props.backConfig==="dark"?"white":"black"}`}>
+                <div style={{padding:"2rem"}} className="flex h-[70vh] flex-col gap-8 overflow-y-auto text-white">
 
-                    <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
-                        <div className={`flex flex-col gap-4`}>
-                            <h3 className={"font-bold text-3xl"}>C# 간편 스케줄러</h3>
-                            <a href={"/schedule.zip"} download={"schedular.zip"}>
-                                다운로드
-                            </a>
-                            <Image src={"/schedule.png"} onClick={()=>{
-                                event.preventDefault();
-                                }}></Image>
+                    <div className={cardClass}>
+                        <div className="flex flex-col gap-4">
+                            <div className="flex items-center justify-between gap-3">
+                                <h3 className="text-3xl font-bold text-orange-300">DevResume (넥스트)</h3>
+                                <span className="rounded-full border border-orange-400/30 bg-orange-500/10 px-3 py-1 text-xs font-semibold tracking-wide text-orange-200">Active</span>
+                            </div>
+                            <div className="rounded-[1.25rem] border border-white/10 bg-black/20 p-6 shadow-inner">
+                                <p className="text-sm text-orange-200/80">https://www.devresume.co.kr/</p>
+                                <p className="mt-4 text-base leading-8 text-white/90">
+                                    개발자 공고 맞춤 비교분석 서비스로, 이력서/자기소개서 분석과 GitHub를 함께 비교 분석합니다.
+                                    프로젝트는 2026.06.10부터 2026.07.02까지 진행 중이며, 현재 챗봇 기능도 함께 구현 중에 있습니다.
+                                </p>
+                                <button className={"mt-5 rounded-lg bg-[#ffc600] px-4 py-2 font-semibold text-black"} onClick={()=>{openFullScreen("https://www.devresume.co.kr/")}}>서비스 바로가기</button>
+                                <Image src="/next.png" preview={false} alt="DevResume screenshot" className="rounded-3xl cursor-pointer border border-white/10" onClick={()=>{openFullScreen("https://www.devresume.co.kr/")}} />
+                            </div>
                         </div>
-                        <div className={"flex items-center"}>
-                            <div className={`grid grid-cols-[1fr_3fr] gap-4`}>
-                                <h3>팀원</h3>
-                                <h3>총 1명</h3>
-                                <h3>사용스택</h3>
-                                <h3>C#, winform, supabase</h3>
-                                <h3>내용</h3>
-                                <h3>Winform 기반의 C#으로 작업하였으며, 작업기간은 2025.07.06 - 2025.07.11입니다.
-                                    07-06(토)부터 주제를 정하고 시작한 프로젝트로 학습 목적과 점검용으로 만든 토이프로젝트입니다.
-                                    DB는 Supabase를 이용하였습니다.
+                        <div className="flex items-start">
+                            <div className="grid w-full grid-cols-[minmax(70px,90px)_1fr] gap-x-3 gap-y-3 rounded-[1.25rem] border border-orange-400/10 bg-black/15 p-4">
+                                <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">팀원</h3>
+                                <h3 className="pt-1 text-white/90 leading-7">총 4명 (팀장)</h3>
+                                <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">사용스택</h3>
+                                <h3 className="pt-1 text-white/90 leading-7">React, Typescript, TailwindCss, Python, Flask, OpenAI, MySQL, AWS EC2, GitHub Actions, Nginx</h3>
+                                <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">내용</h3>
+                                <h3 className="pt-1 text-white/90 leading-7">
+                                    개발자 공고 맞춤 비교분석 프로젝트로, 취준생 이력서/자기소개서 분석 서비스와 달리
+                                    개발자 깃허브 정보를 함께 비교 분석하여 차별화된 인사이트를 제공합니다.
                                 </h3>
-                                <h3>코드</h3>
-                                <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/c-Study/tree/main/TODO-List","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
-                                <h3>프로젝트내용</h3>
-                                <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/C-228cb7b25b638001afb7ccf665d4cec0","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
+                                <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">역할</h3>
+                                <h3>
+                                    팀장으로 의견 조율 및 인프라/서버 관리 전담, 이력서와 채용공고 비교 분석을 담당하고 있습니다.
+                                    현재 챗봇은 JSON 데이터 기반 RAG로 빠르게 구현 중입니다.
+                                </h3>
+                                <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">진행상황</h3>
+                                <h3>
+                                    챗봇의 경우 우선적으로 데이터와 UI 기반부터 확정하고 추가 작업을 진행할 예정입니다.
+                                    CI/CD 설정에 의해 배포는 지정 repository의 내용을 따라 갱신되는 중이지만, 현재 서비스가 동작하지 않게 막아둔 상태이며 필요에 따라 팀원 또는 전체적으로 테스트를 위해 서비스 체크를 하고 있습니다. 
+                                </h3>
+                                <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">서비스</h3>
+                                <h3 className="pt-1 cursor-pointer text-orange-300 underline decoration-orange-400/30 underline-offset-4 leading-7" style={{cursor:"pointer"}} onClick={()=>{window.open("https://www.devresume.co.kr/","_blank","location=no,menubar=no,status=no")}}>바로가기</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={cardClass}>
+                        <div className="flex flex-col gap-4">
+                            <div className="flex items-center justify-between gap-3">
+                                <h3 className="text-3xl font-bold text-orange-300">C# 간편 스케줄러</h3>
+                                <span className="rounded-full border border-orange-400/30 bg-orange-500/10 px-3 py-1 text-xs font-semibold tracking-wide text-orange-200">Toy</span>
+                            </div>
+                            <div className="rounded-[1.25rem] border border-white/10 bg-black/20 p-5 shadow-inner">
+                                <a href={"/schedule.zip"} download={"schedular.zip"} className="text-sm font-semibold text-orange-300 underline decoration-orange-400/30 underline-offset-4">
+                                    다운로드
+                                </a>
+                                <Image src={"/schedule.png"} preview={false} alt={"Schedule screenshot"} className="mt-4 rounded-2xl border border-white/10" onClick={(e)=>{e.preventDefault();}}></Image>
+                            </div>
+                        </div>
+                        <div className="flex items-start">
+                            <div className="grid w-full grid-cols-[minmax(70px,90px)_1fr] gap-x-3 gap-y-3 rounded-[1.25rem] border border-orange-400/10 bg-black/15 p-4">
+                                <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">팀원</h3>
+                                <h3 className="pt-1 text-white/90 leading-7">총 1명</h3>
+                                <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">사용스택</h3>
+                                <h3 className="pt-1 text-white/90 leading-7">C#, winform, supabase</h3>
+                                <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">내용</h3>
+                                <h3 className="pt-1 text-white/90 leading-7">Winform 기반의 C#으로 작업하였으며, 작업기간은 2025.07.06 - 2025.07.11입니다. 07-06(토)부터 주제를 정하고 시작한 프로젝트로 학습 목적과 점검용으로 만든 토이프로젝트입니다. DB는 Supabase를 이용하였습니다.</h3>
+                                <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">코드</h3>
+                                <h3 className="pt-1 cursor-pointer text-orange-300 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://github.com/haracedaily/c-Study/tree/main/TODO-List","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
+                                <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">프로젝트내용</h3>
+                                <h3 className="pt-1 cursor-pointer text-orange-300 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/C-228cb7b25b638001afb7ccf665d4cec0","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
                             </div>
                         </div>
                     </div>
 
 
                     {/*제빙기 청소기사 앱*/}
-                    <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
-                        <div className={`flex flex-col gap-4`}>
-                            <h3 className={"font-bold text-3xl"}>제빙기 청소기사 PWA 어플리케이션</h3>
-                            <Image src={"/icecare_Pwa.png"} width={350} preview={false} onClick={()=>{window.open("https://port-0-cleaning-node-managdgo41797b84.sel4.cloudtype.app/","_blank","location=no,menubar=no,status=no")}}></Image>
+                    <div className={cardClass}>
+                        <div className="flex flex-col gap-4">
+                            <div className="flex items-center justify-between gap-3">
+                                <h3 className="text-3xl font-bold text-orange-300">제빙기 청소기사 PWA 어플리케이션</h3>
+                                <span className="rounded-full border border-orange-400/30 bg-orange-500/10 px-3 py-1 text-xs font-semibold tracking-wide text-orange-200">PWA</span>
+                            </div>
+                            <div className="rounded-[1.25rem] border border-white/10 bg-black/20 p-5 shadow-inner">
+                                <Image src={"/icecare_Pwa.png"} width={350} preview={false} className="rounded-2xl border border-white/10" onClick={()=>{window.open("https://port-0-cleaning-node-managdgo41797b84.sel4.cloudtype.app/","_blank","location=no,menubar=no,status=no")}}></Image>
+                            </div>
                         </div>
-                        <div className={"flex items-center"}>
-                            <div className={`grid grid-cols-[1fr_3fr] gap-4`}>
-                                <h3>팀원</h3>
-                                <h3>총 1명</h3>
-                                <h3>사용스택</h3>
-                                <h3>HTML, CSS, javascript, Node.js, Expressjs, nunjucks, web-push, PWA, CloudType</h3>
-                                <h3>내용</h3>
-                                <h3>
-                                    Node기반의 프로젝트로 nunjucks 템플릿 엔진으로 동적인 화면을 구현하였습니다.
-                                    또한, PWA를 구현하여 service-worker.js와 web-push를 이용한 알림 서비스를 구현하였습니다.
-                                    해당 부분에서 Rest API를 만들어 제빙기 관리자 사이트에서 해당 API를 사용하거나 제빙기 청소기사 어플리케이션에서 사용합니다.
-                                    CloudType의 free-tier로 배포하여 하루에 한번 서버가 내려가는 문제점이 있습니다.
-                                    제빙기 청소기사 어플리케이션 자체는 단독으로 구현 하였지만, 프로젝트 전체 구성은 사용자 사이트, 점주 PWA 어플리케이션, 관리자 사이트, 청소기사 PWA 어플리케이션으로 구성되어있습니다.
-                                    Rest API 테스트와 디자인 요소, 시스템 로직등은 다른 파트를 담당한 팀원분들과 회의를 거쳐 방향을 정했습니다.
-                                </h3>
-                                <h3>코드</h3>
-                                <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/cleaning_node","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
-                                <h3>프로젝트내용</h3>
-                                <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/217cb7b25b638032bf86e04a1f4b1fba","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
+                        <div className="flex items-start">
+                            <div className="grid w-full grid-cols-[minmax(70px,90px)_1fr] gap-x-3 gap-y-3 rounded-[1.25rem] border border-orange-400/10 bg-black/15 p-4">
+                                <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">팀원</h3>
+                                <h3 className="pt-1 text-white/90 leading-7">총 1명</h3>
+                                <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">사용스택</h3>
+                                <h3 className="pt-1 text-white/90 leading-7">HTML, CSS, javascript, Node.js, Expressjs, nunjucks, web-push, PWA, CloudType</h3>
+                                <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">내용</h3>
+                                <h3 className="pt-1 text-white/90 leading-7">Node기반의 프로젝트로 nunjucks 템플릿 엔진으로 동적인 화면을 구현하였습니다. 또한, PWA를 구현하여 service-worker.js와 web-push를 이용한 알림 서비스를 구현하였습니다. 해당 부분에서 Rest API를 만들어 제빙기 관리자 사이트에서 해당 API를 사용하거나 제빙기 청소기사 어플리케이션에서 사용합니다. CloudType의 free-tier로 배포하여 하루에 한번 서버가 내려가는 문제점이 있습니다. 제빙기 청소기사 어플리케이션 자체는 단독으로 구현 하였지만, 프로젝트 전체 구성은 사용자 사이트, 점주 PWA 어플리케이션, 관리자 사이트, 청소기사 PWA 어플리케이션으로 구성되어있습니다. Rest API 테스트와 디자인 요소, 시스템 로직등은 다른 파트를 담당한 팀원분들과 회의를 거쳐 방향을 정했습니다.</h3>
+                                <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">코드</h3>
+                                <h3 className="pt-1 cursor-pointer text-orange-300 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://github.com/haracedaily/cleaning_node","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
+                                <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">프로젝트내용</h3>
+                                <h3 className="pt-1 cursor-pointer text-orange-300 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/217cb7b25b638032bf86e04a1f4b1fba","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
                             </div>
                         </div>
                     </div>
 
                     {/*포트폴리오*/}
-                    <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
-                        <div className={`flex flex-col gap-4`}>
-                            <h3 className={"font-bold text-3xl"}>포트폴리오</h3>
-                            <Image src={"/portfolio.png"} onClick={()=>{window.open("https://portfolio-silk-eight-20.vercel.app/","_blank","location=no,menubar=no,status=no")}}></Image>
+                    <div className={cardClass}>
+                        <div className="flex flex-col gap-4">
+                            <div className="flex items-center justify-between gap-3">
+                                <h3 className="text-3xl font-bold text-orange-300">포트폴리오</h3>
+                                <span className="rounded-full border border-orange-400/30 bg-orange-500/10 px-3 py-1 text-xs font-semibold tracking-wide text-orange-200">Portfolio</span>
+                            </div>
+                            <div className="rounded-[1.25rem] border border-white/10 bg-black/20 p-5 shadow-inner">
+                                <Image src={"/portfolio.png"} className="rounded-2xl border border-white/10" onClick={()=>{window.open("https://portfolio-silk-eight-20.vercel.app/","_blank","location=no,menubar=no,status=no")}}></Image>
+                            </div>
                         </div>
-                        <div className={"flex items-center"}>
-                            <div className={`grid grid-cols-[1fr_3fr] gap-4`}>
-                                <h3>팀원</h3>
-                                <h3>총 1명</h3>
-                                <h3>사용스택</h3>
-                                <h3>HTML, CSS, javascript, TailwindCss, React.js, vercel</h3>
-                                <h3>내용</h3>
-                                <h3>VITE+REACT 프로젝트로 생성하였으며, useState와 useRef 훅으로 스크롤 이벤트를 구현하였습니다. 내부적으로 TailwindCss를 가장 많이 사용하였고, 별도로 css가 필요한 경우 module.css를 사용하였습니다. 배포는 vercel로 하였습니다.</h3>
-                                <h3>코드</h3>
-                                <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/portfolio","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
-                                <h3>프로젝트내용</h3>
-                                <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/1ffcb7b25b6380df8d73f98ab8b47d36","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
+                        <div className="flex items-start">
+                            <div className="grid w-full grid-cols-[minmax(70px,90px)_1fr] gap-x-3 gap-y-3 rounded-[1.25rem] border border-orange-400/10 bg-black/15 p-4">
+                                <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">팀원</h3>
+                                <h3 className="pt-1 text-white/90 leading-7">총 1명</h3>
+                                <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">사용스택</h3>
+                                <h3 className="pt-1 text-white/90 leading-7">HTML, CSS, javascript, TailwindCss, React.js, vercel</h3>
+                                <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">내용</h3>
+                                <h3 className="pt-1 text-white/90 leading-7">VITE+REACT 프로젝트로 생성하였으며, useState와 useRef 훅으로 스크롤 이벤트를 구현하였습니다. 내부적으로 TailwindCss를 가장 많이 사용하였고, 별도로 css가 필요한 경우 module.css를 사용하였습니다. 배포는 vercel로 하였습니다.</h3>
+                                <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">코드</h3>
+                                <h3 className="pt-1 cursor-pointer text-orange-300 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://github.com/haracedaily/portfolio","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
+                                <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">프로젝트내용</h3>
+                                <h3 className="pt-1 cursor-pointer text-orange-300 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/1ffcb7b25b6380df8d73f98ab8b47d36","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
                             </div>
                         </div>
                     </div>
 
                 {/*대중교통 프로젝트*/}
-                <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
+                <div className={cardClass}>
                     <div className={`flex flex-col gap-4`}>
                     <h3 className={"font-bold text-3xl"}>StarBus</h3>
                         <Image src={"/starbus.png"} onClick={()=>{window.open("https://public-traffic-alpha.vercel.app/","_blank","location=no,menubar=no,status=no")}}></Image>
@@ -123,7 +173,7 @@ function Project(props) {
                 </div>
 
                     {/*제빙기 관리자 사이트*/}
-                    <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
+                    <div className={cardClass}>
                         <div className={`flex flex-col gap-4`}>
                             <h3 className={"font-bold text-3xl"}>IceCare_Admin</h3>
                             <Image src={"/icecare_admin.png"} onClick={()=>{window.open("https://ice-care-admin.vercel.app/","_blank","location=no,menubar=no,status=no")}}></Image>
@@ -153,7 +203,7 @@ function Project(props) {
                     </div>
                     
                     {/*제빙기 사이트 리뉴얼*/}
-                    <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
+                    <div className={cardClass}>
                         <div className={`flex flex-col gap-4`}>
                             <h3 className={"font-bold text-3xl"}>IceCare_renew</h3>
                             <Image src={"/icecare.png"} onClick={()=>{window.open("https://haracedaily.github.io/renew_ice_clean/","_blank","location=no,menubar=no,status=no")}}></Image>
@@ -184,7 +234,7 @@ function Project(props) {
                     </div>
                     
                     {/*제빙기 사이트*/}
-                    <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
+                    <div className={cardClass}>
                         <div className={`flex flex-col gap-4`}>
                             <h3 className={"font-bold text-3xl"}>IceCare_origin(iceClean)</h3>
                             <Image src={"/ice_clean.png"} onClick={()=>{window.open("https://haracedaily.github.io/iceClean/index.html","_blank","location=no,menubar=no,status=no")}}></Image>
@@ -212,7 +262,7 @@ function Project(props) {
                     </div>
 
                     {/*일정앱*/}
-                    <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
+                    <div className={cardClass}>
                         <div className={`flex flex-col gap-4`}>
                             <h3 className={"font-bold text-3xl"}>withTime</h3>
                             <Image src={"/with_time.png"} onClick={()=>{window.open("https://haracedaily.github.io/studyList/1st/login.html","_blank","location=no,menubar=no,status=no")}}></Image>
@@ -243,7 +293,7 @@ function Project(props) {
                     </div>
 
                     {/*볼펜제조공장MES시스템*/}
-                    <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
+                    <div className={cardClass}>
                         <div className={`flex flex-col gap-4`}>
                             <h3 className={"font-bold text-3xl"}>penService</h3>
                             <a href={"/penService.pdf"} download={"pen_service.pdf"}>
@@ -274,7 +324,7 @@ function Project(props) {
                     </div>
 
                     {/*캠핑 웹사이트*/}
-                    <div className={`grid gap-4 shadow-2xs ${isMobile?"grid-cols-1":"grid-cols-2"}`}>
+                    <div className={cardClass}>
                         <div className={`flex flex-col gap-4`}>
                             <h3 className={"font-bold text-3xl"}>GoCamping</h3>
                             <a href={"/goCamping.pdf"} download={"go_camping.pdf"}>
