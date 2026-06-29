@@ -31,7 +31,7 @@ function Profile() {
                     <div className="text-white">
                         <h4>안녕하세요, 저는 최준호입니다.</h4>
                         <h4>새로운 기술을 배우고 적용하는 것에 관심이 많으며, 상호 피드백하는 것을 좋아합니다.</h4>
-                        <h4>맡은 바 자부심을 가지고 도전할 수 있는 곳에서 일하고 싶습니다.</h4>
+                        <h4>"미숙한 사람은 자기가 다 아는 것처럼 말하지만, 성숙한 사람은 자신이 얼마나 부족한지 깨닫고 끊임없이 배운다." - 소크라테스</h4>
                     </div>
                     <div className={"flex gap-2 flex-row"}>
                         <h3 className={`${isMobile?"text-lg":"text-2xl"} font-bold text-white`}>Personal Info</h3>

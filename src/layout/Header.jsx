@@ -32,7 +32,7 @@ function Header({currentIndex, scrollToSection}) {
                 </div>
 
                 {menuOpen && (
-                    <div className={`${styles.mobileMenu} flex flex-col gap-2 border-t border-orange-500/20 bg-black/95 px-4 py-3 max-[899px]:flex md:hidden`}>
+                    <div className={`${styles.mobileMenu} flex flex-col gap-2 border-t border-orange-500/20 bg-black/95 px-4 py-3 min-[900px]:hidden`}>
                         <button className={`${styles.mobileMenuButton} rounded-xl border border-orange-500/20 bg-orange-500/10 px-3 py-2 text-left text-white`} onClick={() => handleMenu(0)}>About me</button>
                         <button className={`${styles.mobileMenuButton} rounded-xl border border-orange-500/20 bg-orange-500/10 px-3 py-2 text-left text-white`} onClick={() => handleMenu(1)}>Skill</button>
                         <button className={`${styles.mobileMenuButton} rounded-xl border border-orange-500/20 bg-orange-500/10 px-3 py-2 text-left text-white`} onClick={() => handleMenu(2)}>Experience</button>

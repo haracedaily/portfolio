@@ -56,7 +56,9 @@ function Project() {
                                     CI/CD 설정에 의해 배포는 지정 repository의 내용을 따라 갱신되는 중이지만, 현재 서비스가 동작하지 않게 막아둔 상태이며 필요에 따라 팀원 또는 전체적으로 테스트를 위해 서비스 체크를 하고 있습니다. 
                                 </h3>
                                 <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">서비스</h3>
-                                <h3 className="pt-1 cursor-pointer text-orange-300 underline decoration-orange-400/30 underline-offset-4 leading-7" style={{cursor:"pointer"}} onClick={()=>{window.open("https://www.devresume.co.kr/","_blank","location=no,menubar=no,status=no")}}>바로가기</h3>
+                                <h3 className="pt-1 cursor-pointer text-cyan-500 underline decoration-orange-400/30 underline-offset-4 leading-7" style={{cursor:"pointer"}} onClick={()=>{window.open("https://www.devresume.co.kr/","_blank","location=no,menubar=no,status=no")}}>바로가기</h3>
+                                <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">깃허브</h3>
+                                <h3 className="pt-1 cursor-pointer text-cyan-500 underline decoration-orange-400/30 underline-offset-4 leading-7" style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/8teamNext","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
                             </div>
                         </div>
                     </div>
@@ -83,9 +85,9 @@ function Project() {
                                 <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">내용</h3>
                                 <h3 className="pt-1 text-white/90 leading-7">Winform 기반의 C#으로 작업하였으며, 작업기간은 2025.07.06 - 2025.07.11입니다. 07-06(토)부터 주제를 정하고 시작한 프로젝트로 학습 목적과 점검용으로 만든 토이프로젝트입니다. DB는 Supabase를 이용하였습니다.</h3>
                                 <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">코드</h3>
-                                <h3 className="pt-1 cursor-pointer text-orange-300 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://github.com/haracedaily/c-Study/tree/main/TODO-List","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
+                                <h3 className="pt-1 cursor-pointer text-cyan-500 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://github.com/haracedaily/c-Study/tree/main/TODO-List","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
                                 <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">프로젝트내용</h3>
-                                <h3 className="pt-1 cursor-pointer text-orange-300 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/C-228cb7b25b638001afb7ccf665d4cec0","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
+                                <h3 className="pt-1 cursor-pointer text-cyan-500 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/C-228cb7b25b638001afb7ccf665d4cec0","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
                             </div>
                         </div>
                     </div>
@@ -111,9 +113,9 @@ function Project() {
                                 <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">내용</h3>
                                 <h3 className="pt-1 text-white/90 leading-7">Node기반의 프로젝트로 nunjucks 템플릿 엔진으로 동적인 화면을 구현하였습니다. 또한, PWA를 구현하여 service-worker.js와 web-push를 이용한 알림 서비스를 구현하였습니다. 해당 부분에서 Rest API를 만들어 제빙기 관리자 사이트에서 해당 API를 사용하거나 제빙기 청소기사 어플리케이션에서 사용합니다. CloudType의 free-tier로 배포하여 하루에 한번 서버가 내려가는 문제점이 있습니다. 제빙기 청소기사 어플리케이션 자체는 단독으로 구현 하였지만, 프로젝트 전체 구성은 사용자 사이트, 점주 PWA 어플리케이션, 관리자 사이트, 청소기사 PWA 어플리케이션으로 구성되어있습니다. Rest API 테스트와 디자인 요소, 시스템 로직등은 다른 파트를 담당한 팀원분들과 회의를 거쳐 방향을 정했습니다.</h3>
                                 <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">코드</h3>
-                                <h3 className="pt-1 cursor-pointer text-orange-300 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://github.com/haracedaily/cleaning_node","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
+                                <h3 className="pt-1 cursor-pointer text-cyan-500 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://github.com/haracedaily/cleaning_node","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
                                 <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">프로젝트내용</h3>
-                                <h3 className="pt-1 cursor-pointer text-orange-300 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/217cb7b25b638032bf86e04a1f4b1fba","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
+                                <h3 className="pt-1 cursor-pointer text-cyan-500 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/217cb7b25b638032bf86e04a1f4b1fba","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
                             </div>
                         </div>
                     </div>
@@ -138,9 +140,9 @@ function Project() {
                                 <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">내용</h3>
                                 <h3 className="pt-1 text-white/90 leading-7">VITE+REACT 프로젝트로 생성하였으며, useState와 useRef 훅으로 스크롤 이벤트를 구현하였습니다. 내부적으로 TailwindCss를 가장 많이 사용하였고, 별도로 css가 필요한 경우 module.css를 사용하였습니다. 배포는 vercel로 하였습니다.</h3>
                                 <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">코드</h3>
-                                <h3 className="pt-1 cursor-pointer text-orange-300 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://github.com/haracedaily/portfolio","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
+                                <h3 className="pt-1 cursor-pointer text-cyan-500 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://github.com/haracedaily/portfolio","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
                                 <h3 className="pr-2 pt-1 text-orange-200/80 leading-7">프로젝트내용</h3>
-                                <h3 className="pt-1 cursor-pointer text-orange-300 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/1ffcb7b25b6380df8d73f98ab8b47d36","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
+                                <h3 className="pt-1 cursor-pointer text-cyan-500 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/1ffcb7b25b6380df8d73f98ab8b47d36","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
                             </div>
                         </div>
                     </div>
@@ -165,9 +167,9 @@ function Project() {
                             react-kakao-maps-sdk를 사용하여 카카오맵을 적용하였으며, axios를 통해 api를 호출합니다. 또한, proj4js를 사용하여 api에서 반한된 좌표 변환을 구현하였습니다.
                         </h3>
                         <h3>코드</h3>
-                        <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/publicTraffic","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
+                        <h3 className="pt-1 cursor-pointer text-cyan-500 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://github.com/haracedaily/publicTraffic","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
                         <h3>프로젝트내용</h3>
-                        <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/1f4cb7b25b6380439d6bfcd5b6b6135b","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
+                        <h3 className="pt-1 cursor-pointer text-cyan-500 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/1f4cb7b25b6380439d6bfcd5b6b6135b","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
                     </div>
                     </div>
                 </div>
@@ -195,9 +197,9 @@ function Project() {
                                 배포는 vercel을 사용하였습니다.
                             </h3>
                             <h3>코드</h3>
-                            <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/ice_care_admin","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
+                            <h3 className="pt-1 cursor-pointer text-cyan-500 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://github.com/haracedaily/ice_care_admin","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
                             <h3>프로젝트내용</h3>
-                            <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/1cfcb7b25b6380a891c5d4496330e77f","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
+                            <h3 className="pt-1 cursor-pointer text-cyan-500 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/1cfcb7b25b6380a891c5d4496330e77f","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
                         </div>
                         </div>
                     </div>
@@ -226,9 +228,9 @@ function Project() {
                                     sweetalert2를 사용하여 알림창을 구현하였으며, 배포는 github를 사용하였습니다.
                                 </h3>
                                 <h3>코드</h3>
-                                <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/renew_ice_clean","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
+                                <h3 className="pt-1 cursor-pointer text-cyan-500 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://github.com/haracedaily/renew_ice_clean","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
                                 <h3>프로젝트내용</h3>
-                                <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/1cfcb7b25b638077b304dfe2abbfef4d","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
+                                <h3 className="pt-1 cursor-pointer text-cyan-500 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/1cfcb7b25b638077b304dfe2abbfef4d","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
                             </div>
                         </div>
                     </div>
@@ -254,9 +256,9 @@ function Project() {
                                     다만 googleTranslate는 기능이 정확하지 않아, 현재는 사용하지 않고 있습니다.
                                 </h3>
                                 <h3>코드</h3>
-                                <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/iceClean","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
+                                <h3 className="pt-1 cursor-pointer text-cyan-500 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://github.com/haracedaily/iceClean","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
                                 <h3>프로젝트내용</h3>
-                                <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/1a1cb7b25b6380b3b8d1f0952ef69527","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
+                                <h3 className="pt-1 cursor-pointer text-cyan-500 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/1a1cb7b25b6380b3b8d1f0952ef69527","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
                             </div>
                         </div>
                     </div>
@@ -285,9 +287,9 @@ function Project() {
                                     플래너의 경우도 css에 집중하였으며 과정 초기에 구현하였던 프로젝트입니다.
                                 </h3>
                                 <h3>코드</h3>
-                                <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/studyList/tree/main/1st","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
+                                <h3 className="pt-1 cursor-pointer text-cyan-500 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://github.com/haracedaily/studyList/tree/main/1st","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
                                 <h3>프로젝트내용</h3>
-                                <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/UI-html-css-javascri-199cb7b25b6380248918e9763f319bdd","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
+                                <h3 className="pt-1 cursor-pointer text-cyan-500 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://ripe-potato-6b7.notion.site/UI-html-css-javascri-199cb7b25b6380248918e9763f319bdd","_blank","location=no,menubar=no,status=no,width=800,height=800")}}>노션</h3>
                             </div>
                         </div>
                     </div>
@@ -318,7 +320,7 @@ function Project() {
                                     현재는 AWS에서 배포가 중단되었습니다.
                                 </h3>
                                 <h3>코드</h3>
-                                <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/san1313/PenService","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
+                                <h3 className="pt-1 cursor-pointer text-cyan-500 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://github.com/san1313/PenService","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
                             </div>
                         </div>
                     </div>
@@ -345,7 +347,7 @@ function Project() {
                                     팀장, 카카오지도 API를 사용하여 지역별 숙박업체 소개(등록 캠핑장의 위치와 정보), FullCallendar를 이용한 숙박업체 예약 및 예약 수정, 아임포트API를 이용한 결제기능과 팀장으로서 전반적인 지원을 담당하였습니다.
                                 </h3>
                                 <h3>코드</h3>
-                                <h3 style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/Go-Camping","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
+                                <h3 className="pt-1 cursor-pointer text-cyan-500 underline decoration-orange-400/30 underline-offset-4 leading-7" onClick={()=>{window.open("https://github.com/haracedaily/Go-Camping","_blank","location=no,menubar=no,status=no")}}>깃허브</h3>
                             </div>
                         </div>
                     </div>

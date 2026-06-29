@@ -14,15 +14,21 @@ function Experience() {
                     <div className={"flex flex-col gap-4 shadow-2xs"}>
                     <h3 className={`font-bold ${isMobile?"text-lg":"text-3xl"} border-b-amber-500 border-b-[0.5px] text-white`}>학습</h3>
                         <div className={`grid grid-cols-[1fr_1fr_3fr] gap-4 text-white ${isMobile?"text-sm":"text-lg"}`}>
+                            <h3>한국소프트웨어저작권협회</h3>
+                            <h3>2026.04 - 2026.07</h3>
+                            <div className={"text-cyan-500"} style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/spc2026","_blank","location=no,menubar=no,status=no")}}>
+                                <h3>생성형 AI 에이전틱 웹서비스 개발자 양성과정</h3>
+                            </div>
+                            
                             <h3>그린컴퓨터아트학원</h3>
                             <h3>2024.12 - 2025.07</h3>
-                            <div style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/studyList","_blank","location=no,menubar=no,status=no")}}>
+                            <div className={"text-cyan-500"} style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/studyList","_blank","location=no,menubar=no,status=no")}}>
                                 <h3>기업요구 프로젝트 중심 풀스택 개발자 (PWA를 활용한 React,Express.js) 양성과정</h3>
                             </div>
 
                             <h3>동북아 ai 교육센터</h3>
                             <h3>2025.04.07 - 2024.04.18</h3>
-                            <div style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/studyList/tree/main/self_c","_blank","location=no,menubar=no,status=no")}}>
+                            <div className={"text-cyan-500"} style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/studyList/tree/main/self_c","_blank","location=no,menubar=no,status=no")}}>
                             <h3>[25년 2기] AIoT 사물인터넷(IoT, C언어,전자회로) 교육과정</h3>
                             </div>
 
@@ -32,7 +38,7 @@ function Experience() {
 
                             <h3>예담직업전문학교</h3>
                             <h3>2022.12 - 2023.06</h3>
-                            <div style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/Java","_blank","location=no,menubar=no,status=no")}}>
+                            <div className={"text-cyan-500"} style={{cursor:"pointer"}} onClick={()=>{window.open("https://github.com/haracedaily/Java","_blank","location=no,menubar=no,status=no")}}>
                             <h3> 클라우드 기반 JAVA 개발자 양성과정</h3>
                             </div>
                         </div>
